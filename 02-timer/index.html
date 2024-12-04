@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.svg">
+    <title>Timer</title>
+
+  </head>
+  <body>
+
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <audio id="myAudio">
+      <source src="./kitchen-timer-33043.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="clock">
+      <div id="time">
+        <!-- <span class="tm" id="hours">00</span>hr:
+        <span class="tm" id="minutes">00</span>m:
+        <span class="tm" id="seconds">10</span>s -->
+        <input class="tm" name="hours" type="text" max="60" placeholder="00" maxlength="2" id="hours"/>hr:
+        <input class="tm" name="minutes" type="text" max="60" placeholder="00" maxlength="2" id="minutes"/>m:
+        <input class="tm" name="seconds" type="text" max="60" placeholder="00" maxlength="2" id="seconds"/>s:
+        <span id="next-clock"></span>
+      </div>
+      <br />
+      <div class="btn-container">
+        <div class="btn" id="startBtn">Start</div>
+        <div class="btn" id="stopBtn">Stop</div>
+        <div class="btn" id="resetBtn">Reset</div>
+      </div>
+
+      
+
+    </div>
+
+    
+  </body>
+
+  <script src="script.js"></script>
+</html>
