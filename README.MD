@@ -18,7 +18,7 @@
   </tr>
   <tr>
     <td>03</td>
-    <td>Timer</td>
+    <td>Memorygame</td>
     <td><a href="https://js-basic-memorygame.vercel.app/">Demo</a></td>
   </tr>
 </table>
