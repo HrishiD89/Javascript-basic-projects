@@ -9,8 +9,6 @@ let firstCard = null;
 let secondCard = null; 
 let lockBoard = false; 
 
-
-
 const images = [
     { id: "image1", img: "https://picsum.photos/id/101/200/200", quantity: 2 },
     { id: "image2", img: "https://picsum.photos/id/102/200/200", quantity: 2 },
@@ -27,8 +25,6 @@ const images = [
     { id: "image13", img: "https://picsum.photos/id/113/200/200", quantity: 2 },
     { id: "image14", img: "https://picsum.photos/id/114/200/200", quantity: 2 },
 ];
-
-
 
 
 // Generate cards dynamically based on the images array

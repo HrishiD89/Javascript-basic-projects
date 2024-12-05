@@ -1,113 +1,110 @@
-:root{
-    --primary-color:#4794ca;
-    --yes-color:#44da538f;
-    --background:#f6fafd;
-    --secondary-color: #bea6e4;
-    --secondary-bg:#eff5fa;
-    --text:#03080c;
-    --light-purple:#d5ccef;
-    --tetiary-color:#de7575;
+:root {
+  --primary-color: #4794ca;
+  --yes-color: #44da538f;
+  --background: #f6fafd;
+  --secondary-color: #bea6e4;
+  --secondary-bg: #eff5fa;
+  --text: #03080c;
+  --light-purple: #d5ccef;
+  --tetiary-color: #de7575;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:'Courier New';
-    font-size: 1.6rem;
-    font-weight: 400;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New";
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
-body{
-    width: 100%;
-    height: 100vh;
-    background-color: var(--background);
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
 }
 
-html{
-    font-size: 10px;
+html {
+  font-size: 10px;
 }
-main{
-    padding: 0 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-h1{
-    font-size: 4.8rem;
-    color: var(--text);
+main {
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-p{
-    font-size: 16px;
-    display: inline-block;
-    border-bottom: 2px solid var(--secondary-color);
+h1 {
+  font-size: 4.8rem;
+  color: var(--text);
 }
 
-.game-info{
-    width: 100%;
-    padding: 2rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 10rem;
+p {
+  font-size: 16px;
+  display: inline-block;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.game-info {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
 }
 
 #grid {
-    border: 5px dotted  var(--secondary-color);
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    padding: 10px;
-    border-radius: 25px;
+  border: 5px dotted var(--secondary-color);
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding: 10px;
+  border-radius: 25px;
 }
 
 .cards {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    perspective: 1000px;
-    cursor: pointer;
-    perspective: 1000px;
-    border: 1px solid var(--secondary-color);
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  perspective: 1000px;
+  cursor: pointer;
+  perspective: 1000px;
+  border: 1px solid var(--secondary-color);
+  transition: transform 0.3s ease;
 }
 
-
-
 .cards img {
-    padding: 2rem;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 25px;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
 }
 
 .cards.flipped img {
-    visibility: visible;
+  visibility: visible;
 }
 
- .cards:hover  {
-    background-color: var(--secondary-bg);
+.cards:hover {
+  background-color: var(--secondary-bg);
 }
 
-#dice{
-    margin-top: 2rem;
-    background-color: var(--secondary-color);
-    padding: 10px 20px;
-    font-size: 16px;
-    color: var(--secondary-bg);
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 5rem;
+#dice {
+  margin-top: 2rem;
+  background-color: var(--secondary-color);
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--secondary-bg);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 5rem;
 }
 
-#dice:hover{
-    color: white;
-    background-color: var(--tetiary-color);
+#dice:hover {
+  color: white;
+  background-color: var(--tetiary-color);
 }
