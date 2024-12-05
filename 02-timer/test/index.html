@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input class="tm" type="text" id="hours" placeholder="00" maxlength="2" dir="rtl"/>
+      <input class="tm" type="text" id="minutes" placeholder="00" maxlength="2" dir="rtl"/>
+      <input class="tm" type="text" id="seconds" placeholder="00" maxlength="2" dir="rtl"/>
+      <h1 id="clock"></h1>
+    </div>
+
+    <script>
+      const tms = document.querySelectorAll(".tm");
+      const hours = document.getElementById("hours");
+      const minutes = document.getElementById("minutes");
+      const seconds = document.getElementById("seconds");
+      
+      document.addEventListener('DOMContentLoaded', function(e) {
+        seconds.focus();
+        seconds.setSelectionRange(seconds.value.length, seconds.value.length);
+      }, true);
+
+      tms.forEach((input, index) => {
+        input.addEventListener("input", function () {
+          if (this.value.length === 2 && index > 0) {
+            // Move focus to the next input
+            tms[index - 1].focus();
+          }
+        });
+
+        input.addEventListener("keydown", function (e) {
+          // Move focus back to the previous input when backspace is pressed
+          if (e.key === "Backspace" && this.value.length === 0 && index < tms.length - 1) {
+            tms[index + 1].focus();
+          }
+        });
+      });
+
+      // Add a focus event to ensure the cursor stays at the rightmost position
+      tms.forEach(input => {
+        input.addEventListener('focus', function() {
+          const length = this.value.length;
+          this.setSelectionRange(length, length);
+        });
+      });
+    </script>
+  </body>
+</html>

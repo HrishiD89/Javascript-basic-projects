@@ -30,7 +30,7 @@ let initialTime = 0;
 function updateProgressBar() {
   const progress = (totalTime / initialTime) * 100; 
   progressBar.style.width = `${progress}%`; 
-  progressBar.innerHTML = `<h1 class="tm">${Math.floor(progress)}%</h1>`;
+  progressBar.innerHTML = `<h1 class="tm">Timer</h1>`;
 }
 
 startBtn.addEventListener("click", () => {
@@ -70,7 +70,12 @@ resetBtn.addEventListener("click", () => {
   initialTime = 0;
   pauseAudio();
   showTime(totalTime);
-  progressBar.style.width = "0%"; 
+  hours.value = "";
+  minutes.value = "";
+  seconds.value = "";
+  seconds.focus();
+  seconds.setSelectionRange(seconds.value.length, seconds.value.length);
+  progressBar.style.width = "100%"; 
 });
 
 function showTime(totalTime) {
@@ -85,4 +90,78 @@ function showTime(totalTime) {
 
 
 const tms = document.querySelectorAll(".tm");
-console.log(tms);
+
+document.addEventListener('DOMContentLoaded', function(e) {
+  // Set focus to the seconds input and move the cursor to the end
+  seconds.focus();
+  seconds.setSelectionRange(seconds.value.length, seconds.value.length);
+}, true);
+
+// Loop through all tm inputs
+tms.forEach(input => {
+  input.addEventListener("input", function() {
+    handleInputChange(this);
+  });
+
+  input.addEventListener("keydown", function(event) {
+    handleKeyDown(event, this);
+  });
+});
+
+// Handle input changes
+function handleInputChange(input) {
+  let value = input.value;
+
+  // Allow only numbers and strip out any non-digit characters
+  value = value.replace(/\D/g, '');
+
+  // If the value is less than 60, update the input; otherwise, show an alert
+    input.value = value; // Update input value
+
+  // Focus change when the input length reaches max (2 digits)
+  if (value.length === input.maxLength) {
+    moveToNextInput(input);
+  }
+}
+
+
+// Handle backspace and focus change
+function handleKeyDown(event, input) {
+  // If the user presses Backspace and the input is empty, move to the previous input
+  if (event.key === "Backspace" && input.value === "") {
+    moveToPreviousInput(input);
+  }
+}
+
+// Move focus to the next input
+function moveToNextInput(currentInput) {
+  const nextInput = getNextInput(currentInput);
+  if (nextInput) {
+    nextInput.focus();
+    // nextInput.setSelectionRange(nextInput.value.length, nextInput.value.length);
+  }
+}
+
+// Move focus to the previous input
+function moveToPreviousInput(currentInput) {
+  const previousInput = getPreviousInput(currentInput);
+  if (previousInput) {
+    previousInput.focus();
+  }
+}
+
+// Get the next input element
+function getNextInput(currentInput) {
+  const index = Array.from(tms).indexOf(currentInput);
+  if (index > 0) {
+    return tms[index - 1] || null; // Return the next input or null if none
+  }
+}
+
+// Get the previous input element
+function getPreviousInput(currentInput) {
+  const index = Array.from(tms).indexOf(currentInput);
+  if (index < tms.length - 1) {
+    return tms[index + 1] || null; // Return the previous input or null if none
+  }
+}
