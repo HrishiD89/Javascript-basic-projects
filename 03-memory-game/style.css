@@ -56,11 +56,11 @@ p {
 
 #grid {
   border: 5px dotted var(--secondary-color);
-  max-width: 800px;
+  max-width: 600px;
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   padding: 10px;
   border-radius: 25px;
@@ -108,3 +108,35 @@ p {
   color: white;
   background-color: var(--tetiary-color);
 }
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 8px; 
+  }
+
+  main {
+    padding: 0 2rem; 
+  }
+  .game-info {
+    gap: 5rem; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  #grid {
+    max-width: 400px;
+    grid-template-columns: repeat(4, 1fr); 
+    padding: 5px; 
+  }
+
+  .cards {
+    height: 60px; 
+    width: 100%; 
+  }
+  .cards img {
+    padding: 1rem; 
+  }
+
+}
+

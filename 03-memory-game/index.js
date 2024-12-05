@@ -22,8 +22,6 @@ const images = [
     { id: "image10", img: "https://picsum.photos/id/110/200/200", quantity: 2 },
     { id: "image11", img: "https://picsum.photos/id/111/200/200", quantity: 2 },
     { id: "image12", img: "https://picsum.photos/id/112/200/200", quantity: 2 },
-    { id: "image13", img: "https://picsum.photos/id/113/200/200", quantity: 2 },
-    { id: "image14", img: "https://picsum.photos/id/114/200/200", quantity: 2 },
 ];
 
 
