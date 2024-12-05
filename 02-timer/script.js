@@ -30,7 +30,6 @@ let initialTime = 0;
 function updateProgressBar() {
   const progress = (totalTime / initialTime) * 100; 
   progressBar.style.width = `${progress}%`; 
-  progressBar.innerHTML = `<h1 class="tm">Timer</h1>`;
 }
 
 startBtn.addEventListener("click", () => {
