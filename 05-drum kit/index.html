@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drun-kit</title>
+    <link rel="shortcut icon" href="./download.png" type="image/x-icon">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: monospace;
+      }
+
+      h1 {
+        color: white;
+        margin-bottom: 2rem;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main {
+        text-align: center;
+      }
+
+      .keys {
+        background-color: lightgrey;
+        margin: 1rem;
+        max-width: 400px;
+        width: 100%;
+        height: 100px;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+      }
+
+      .keys:nth-child(1) {
+        background-color: antiquewhite;
+      }
+      .keys:nth-child(2) {
+        background-color: chocolate;
+        color: white;
+      }
+      .keys:nth-child(3) {
+        background-color: blueviolet;
+        color: white;
+      }
+      .keys:hover {
+        cursor: pointer;
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Drum Kit</h1>
+    <audio id="snareSound">
+      <source src="./audio/snare.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="kickSound">
+      <source src="./audio/kick.mp3" type="audio/mpeg" />
+      />
+    </audio>
+    <audio id="hi-hatSound">
+      <source src="./audio//hi-hat.mp3" type="audio/mpeg" />
+    </audio>
+
+    <main>
+      <div id="kick" class="keys">Kick -'A'</div>
+      <div id="snare" class="keys">Snare -'S'</div>
+      <div id="hi-hat" class="keys">Hi-Hat -'D'</div>
+    </main>
+
+    <script>
+      let kickSound = document.getElementById("kickSound");
+      let snareSound = document.getElementById("snareSound");
+      let hihatSound = document.getElementById("hi-hatSound");
+
+      const kick = document.getElementById("kick");
+      const snare = document.getElementById("snare");
+      const hihat = document.getElementById("hi-hat");
+
+      kick.addEventListener("click", () => {
+        playSound(kickSound, kick);
+      });
+      snare.addEventListener("click", () => {
+        playSound(snareSound, snare);
+      });
+      hihat.addEventListener("click", () => {
+        playSound(hihatSound, hihat);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        const key = e.key;
+        if (key == "a" || key == "A") {
+          playSound(kickSound,kick);
+        } else if (key == "s" || key == "S") {
+          playSound(snareSound,snare);
+        } else if (key == "d" || key == "D") {
+          playSound(hihatSound,hihat);
+        }
+      });
+
+      function playSound(audio, id) {
+        audio.currentTime = 0;
+        audio.play();
+        id.style.outline = "yellow 4px solid";
+        id.style.border = "black 4px solid";
+        setTimeout(() => {
+          id.style.outline = "";
+          id.style.border = "";
+        }, 100);
+      }
+
+
+
+    </script>
+  </body>
+</html>

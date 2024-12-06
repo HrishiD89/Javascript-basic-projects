@@ -21,4 +21,9 @@
     <td>Timer</td>
     <td><a href="https://js-basic-memorygame.vercel.app/">Demo</a></td>
   </tr>
+  <tr>
+    <td>04</td>
+    <td>Drum-Kit</td>
+    <td><a href="https://js-basic-drumkit.vercel.app/">Demo</a></td>
+  </tr>
 </table>
