@@ -21,13 +21,10 @@
     <td>Memorygame</td>
     <td><a href="https://js-basic-memorygame.vercel.app/">Demo</a></td>
   </tr>
-<<<<<<< HEAD
   <tr>
     <td>04</td>
     <td>Drum-Kit</td>
     <td><a href="https://js-basic-drumkit.vercel.app/">Demo</a></td>
   </tr>
 </table>
-=======
-</table>
->>>>>>> 64c6cbdc783c1c74e3c3dc89da25f5ac02a86d87
+
